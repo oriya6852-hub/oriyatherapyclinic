@@ -6,7 +6,7 @@
     <title>אוריה אלחרר: מאבחנת ומטפלת רב תחומית</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Amatic+SC:wght@700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Assistant', sans-serif; margin: 0; padding: 20px; line-height: 1.5; background-color: #ffffff; color: #333; text-align: right; }
+        body { font-family: 'Assistant', sans-serif; margin: 0; padding: 20px; line-height: 1.6; background-color: #ffffff; color: #333; text-align: right; }
         .container { max-width: 800px; margin: 0 auto; }
         
         h1 { font-family: 'Rubik', sans-serif; font-size: 1.8rem; color: #2c3e50; text-align: center; margin-bottom: 10px; }
@@ -15,20 +15,20 @@
         .quick-nav { text-align: center; margin-bottom: 30px; border-bottom: 1px solid #f0f7f3; padding-bottom: 15px; }
         .quick-nav a { text-decoration: none; color: #8ebfa3; font-size: 1.1rem; margin: 0 12px; font-weight: bold; }
 
-        /* הגדרת כותרות השיטות בכתב יד */
-        h2, h3 { font-family: 'Amatic SC', cursive; color: #2c3e50; margin-top: 45px; border-bottom: 2px solid #f0f7f3; padding-bottom: 5px; }
-        h2 { font-size: 3.2rem; }
-        h3 { font-size: 2.8rem; color: #4a6b58; border-bottom: none; margin-top: 30px; }
+        /* כותרות ראשיות - דפוס */
+        h2 { font-family: 'Rubik', sans-serif; font-size: 1.8rem; color: #2c3e50; margin-top: 45px; border-bottom: 2px solid #f0f7f3; padding-bottom: 5px; }
         
-        p { margin: 0 0 10px 0; font-size: 1.15rem; text-align: right; }
-        .spacer { margin-bottom: 25px; display: block; }
+        /* סוגי טיפולים בלבד - כתב יד */
+        h3 { font-family: 'Amatic SC', cursive; font-size: 2.8rem; color: #4a6b58; margin-top: 30px; margin-bottom: 10px; border-bottom: none; }
         
-        img, video { width: 100% !important; height: auto; border-radius: 12px; margin: 25px 0; display: block; }
+        p { margin: 0 0 15px 0; font-size: 1.15rem; }
+        img, video { width: 100%; height: auto; border-radius: 12px; margin: 25px 0; display: block; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         
         .whatsapp-btn { display: block; width: fit-content; margin: 30px auto; background-color: #8ebfa3; color: white; padding: 14px 35px; text-decoration: none; border-radius: 60px; font-weight: bold; text-align: center; font-size: 1.2rem; }
 
-        .reviews-container { background-color: #f9fbf9; padding: 20px; border-radius: 15px; margin: 30px 0; }
-        .review-card { background: white; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .reviews-container { background-color: #f9fbf9; padding: 20px; border-radius: 15px; margin: 40px 0; }
+        .review-card { background: white; padding: 10px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .review-card img { margin: 0; border-radius: 8px; }
     </style>
 </head>
 <body>
@@ -39,11 +39,9 @@
     <nav class="quick-nav">
         <a href="#about">על עצמי</a>
         <a href="#methods">השיטות</a>
-        <a href="#testimonials">ביקורות</a>
+        <a href="#testimonials">המלצות</a>
         <a href="#offer">מה אני מציעה?</a>
     </nav>
-
-    <a href="https://wa.me/972506366588" class="whatsapp-btn">תיאום פגישת אבחון בוואטסאפ</a>
 
     <h2 id="about">קצת על עצמי</h2>
     <p>נעים מאוד, אני אוריה אלחרר, בת 35, גרה בחריש...</p>
@@ -52,23 +50,31 @@
     <h2 id="methods">על השיטות:</h2>
 
     <h3>מאסטר ב-NLP</h3>
-    <p>בשיטה הזו אנחנו חוזרים לרגעי שורש...</p>
-    
-    <video controls playsinline preload="metadata"><source src="clinic.mp4" type="video/mp4"></video>
+    <p>שינוי דפוסים ואמונות מעכבות מהשורש דרך עבודה עם התת-מודע.</p>
+    <video controls playsinline><source src="clinic.mp4" type="video/mp4"></video>
 
-    <h3>שיטת סאטיה:</h3>
-    <p>שיטה טיפולית שמבוססת על שיח עמוק ונוכחות בגוף...</p>
+    <h3>שיטת סאטיה</h3>
+    <p>שיטה טיפולית שמבוססת על שיח עמוק ונוכחות בגוף.</p>
+
+    <h3>Human Design</h3>
+    <p>מפה אישית הנותנת הבנה מעשית לגבי איך אתם בנויים.</p>
+
+    <h3>קלפי טארוט של אושו</h3>
+    <p>כלי להתבוננות פנימית והבנה של מה שעוצר אתכם ברגע הזה.</p>
+
+    <h2 id="offer">מה אני מציעה?</h2>
+    <p><strong>1) אבחון אישיותי ויעוץ (2-4 מפגשים).</strong></p>
+    <p><strong>2) תהליך טיפולי עמוק (8-15 מפגשים).</strong></p>
 
     <h2 id="testimonials">מה אומרים המטופלים?</h2>
     <div class="reviews-container">
         <div class="review-card"><img src="review1.png"></div>
         <div class="review-card"><img src="review2.png"></div>
         <div class="review-card"><img src="review3.png"></div>
+        <div class="review-card"><img src="review4.png"></div>
+        <div class="review-card"><img src="review5.png"></div>
+        <div class="review-card"><img src="review6.png"></div>
     </div>
-
-    <h2 id="offer">מה אני מציעה?</h2>
-    <p><strong>1) אבחון אישיותי ויעוץ.</strong></p>
-    <p><strong>2) תהליך טיפולי עמוק.</strong></p>
 
     <a href="https://wa.me/972506366588" class="whatsapp-btn">דברו איתי - בואו נתחיל</a>
 
