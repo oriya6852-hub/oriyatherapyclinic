@@ -12,12 +12,10 @@
             --sage: #8ebfa3;
             --sage-dark: #5a8c6e;
             --sage-light: #d4ece0;
-            --earth: #8b6f47;
             --earth-light: #c4a882;
             --bark: #3d2b1f;
             --sand: #e8d5b7;
             --moss: #4a6b58;
-            --clay: #c17f5a;
         }
 
         *, *::before, *::after { box-sizing: border-box; }
@@ -32,16 +30,6 @@
             direction: rtl;
             text-align: right;
             overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.4;
         }
 
         .container {
@@ -134,6 +122,38 @@
             margin-top: -2px;
         }
 
+        /* ===== WAVE DIVIDER ===== */
+        .wave-divider {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            margin: 10px 0;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 32px;
+        }
+
+        /* ===== LEAF ACCENT ===== */
+        .leaf-accent {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 6px 0;
+            opacity: 0.6;
+            letter-spacing: 4px;
+        }
+
+        .leaf-accent-sides {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-size: 1.3rem;
+            opacity: 0.5;
+            margin: 8px 0;
+        }
+
         /* ===== NAV ===== */
         .quick-nav {
             display: flex;
@@ -185,14 +205,13 @@
             box-shadow: 0 14px 32px rgba(90,140,110,0.45);
         }
 
-        /* ===== SECTION HEADERS – each a different color ===== */
+        /* ===== SECTION HEADERS – lighter colors, no side bar ===== */
         .section-header {
             border-radius: 20px 20px 0 0;
             padding: 28px 36px 22px;
-            margin-bottom: 0;
         }
 
-        .section-header .section-label {
+        .section-label {
             font-family: 'Rubik', sans-serif;
             font-size: 0.75rem;
             font-weight: 700;
@@ -200,7 +219,7 @@
             text-transform: uppercase;
             display: block;
             margin-bottom: 4px;
-            opacity: 0.75;
+            color: rgba(255,255,255,0.8);
         }
 
         .section-header h2 {
@@ -208,48 +227,22 @@
             font-size: 3.2rem;
             margin: 0;
             line-height: 1;
-        }
-
-        /* about – soft sage */
-        .header-about {
-            background: linear-gradient(135deg, #4a7a5e, #6da084);
             color: white;
         }
-        .header-about .section-label { color: rgba(255,255,255,0.8); }
-        .header-about h2 { color: white; }
 
-        /* methods – warm bark (lighter than before) */
-        .header-methods {
-            background: linear-gradient(135deg, #6b4c35, #9a7255);
-            color: white;
-        }
-        .header-methods .section-label { color: rgba(255,255,255,0.8); }
-        .header-methods h2 { color: white; }
+        /* lighter, brighter versions */
+        .header-about        { background: linear-gradient(135deg, #9c5030, #c47050); }
+        .header-methods      { background: linear-gradient(135deg, #3d7a60, #60a882); }
+        .header-offer        { background: linear-gradient(135deg, #9c5030, #c47050); }
+        .header-testimonials { background: linear-gradient(135deg, #2e5040, #4a7a5e); }
 
-        /* offer – dusty clay */
-        .header-offer {
-            background: linear-gradient(135deg, #a05e3a, #c4845a);
-            color: white;
-        }
-        .header-offer .section-label { color: rgba(255,255,255,0.8); }
-        .header-offer h2 { color: white; }
-
-        /* testimonials – deep moss */
-        .header-testimonials {
-            background: linear-gradient(135deg, #2e5040, #4a7a5e);
-            color: white;
-        }
-        .header-testimonials .section-label { color: rgba(255,255,255,0.8); }
-        .header-testimonials h2 { color: white; }
-
-        /* ===== SECTION BODY ===== */
-        .section-body {
+        /* ===== SECTION CONTENT ===== */
+        .section-content {
             background: var(--warm-white);
-            border: 1px solid var(--sand);
-            border-top: none;
             border-radius: 0 0 20px 20px;
-            padding: 32px 36px 20px;
-            margin-bottom: 28px;
+            padding: 30px 36px 16px;
+            margin-bottom: 8px;
+            box-shadow: 0 6px 24px rgba(61,43,31,0.07);
         }
 
         /* ===== PARAGRAPHS ===== */
@@ -273,9 +266,7 @@
             box-shadow: 0 12px 40px rgba(61,43,31,0.15);
         }
 
-        .content-img.small {
-            max-width: 340px;
-        }
+        .content-img.small { max-width: 340px; }
 
         /* ===== VIDEO ===== */
         video {
@@ -290,7 +281,7 @@
 
         /* ===== METHOD BLOCKS ===== */
         .method-block {
-            padding: 22px 0 6px;
+            padding: 20px 0 4px;
             border-bottom: 1px solid var(--sand);
         }
 
@@ -321,7 +312,7 @@
             position: relative;
             background: var(--cream);
             border-radius: 14px;
-            padding: 28px 28px 16px;
+            padding: 28px 28px 14px;
             margin-bottom: 18px;
             border: 1px solid var(--sand);
             overflow: hidden;
@@ -332,7 +323,7 @@
             position: absolute;
             top: 0; right: 0;
             width: 6px; height: 100%;
-            background: linear-gradient(180deg, var(--sage), var(--earth-light));
+            background: linear-gradient(180deg, #c4a882, #8ebfa3, #5a8c6e);
             border-radius: 0 14px 14px 0;
         }
 
@@ -358,7 +349,7 @@
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 18px;
         }
 
         .review-card {
@@ -382,30 +373,40 @@
             display: block;
         }
 
-        /* ===== DIVIDER ===== */
-        .divider {
+        /* ===== ENDING DECORATION ===== */
+        .ending-decoration {
             text-align: center;
-            margin: 40px 0 10px;
+            margin: 44px 0 16px;
+            position: relative;
+        }
+
+        .ending-decoration::before,
+        .ending-decoration::after {
+            content: '';
+            display: inline-block;
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--earth-light));
+            vertical-align: middle;
+            margin: 0 14px;
+        }
+
+        .ending-decoration::after {
+            background: linear-gradient(90deg, var(--earth-light), transparent);
+        }
+
+        .ending-decoration span {
+            font-size: 1.1rem;
             color: var(--earth-light);
-            font-size: 1.4rem;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
         }
 
         /* ===== FOOTER ===== */
         footer {
             text-align: center;
-            padding: 40px 20px 30px;
+            padding: 20px 20px 30px;
             color: var(--earth-light);
             font-size: 0.85rem;
-        }
-
-        footer::before {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--sand), transparent);
-            margin: 0 auto 20px;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -429,11 +430,11 @@
             .hero-subtitle { font-size: 1rem; }
             .section-header { padding: 22px 20px 18px; }
             .section-header h2 { font-size: 2.6rem; }
-            .section-body { padding: 24px 20px 16px; }
+            .section-content { padding: 22px 18px 12px; }
             h3 { font-size: 2rem; }
-            .offer-card { padding: 24px 20px 12px; }
+            .offer-card { padding: 22px 18px 10px; }
             .offer-number { font-size: 3.5rem; left: 12px; }
-            .reviews-grid { gap: 10px; }
+            .reviews-grid { gap: 12px; }
             .quick-nav a { font-size: 0.88rem; padding: 6px 12px; }
             .content-img.small { max-width: 100%; }
         }
@@ -465,24 +466,36 @@
 
     <a href="https://wa.me/972506366588" class="whatsapp-btn">תיאום פגישת אבחון בוואטסאפ</a>
 
+    <div class="ending-decoration"><span>✦ ✦ ✦</span></div>
+
     <!-- ABOUT -->
     <div id="about">
         <div class="section-header header-about">
             <span class="section-label">קצת עליי</span>
-            <h2>מי אני?</h2>
+            <h2>קצת על עצמי</h2>
         </div>
-        <div class="section-body">
+        <div class="section-content">
             <p>נעים מאוד, אני אוריה אלחרר, בת 35, גרה בחריש. אני אדם שאוהב ללמוד, לחקור ולהעמיק בנושאים שמעניינים אותי. מאז שאני ילדה הלכתי בדרך משלי, ייחודית ושונה, בחשיבה עצמאית ובהסתכלות רחבה ולפרטים במקביל. נמשכתי לחקור בני אדם, את עולמם הפנימי, התנהגויות, שפת גוף, דפוסים, והרבה רצון לעזור ולכוון אנשים, בעזרת הידע שאני מקבלת בדרכים שונות.</p>
             <p>כבר בגיל 14 למדתי לבד קריאת כתב (גרפולוגיה) ופיענחתי לאנשים שאני לא מכירה. הפתעתי אנשים ואת עצמי מכמות המידע שקיבלתי.</p>
             <p>במשך השנים חקרתי כל פעם דרך כלי אחר. ועם השנים התחלתי להשתמש בשילוב הכלים הרבים שרכשתי, כדי לאבחן, לדייק, לכוון ולטפל באנשים.</p>
             <p><strong>הסוד טמון בדיוק ובהתאמת הכלים, לכל אדם ובכל רגע נתון.</strong></p>
             <p><strong>במקצועות אני מורה לחינוך מיוחד, מטפלת מוסמכת מאסטר NLP, תת מודע, מתמחה ב־Human Design (בניית מפות אישיות והכוונה דרכם), קלפי טארוט, שיטת סאטיה ועוד כלים טיפוליים ואבחוניים. דיג׳ית ומוזיקאית.</strong></p>
-            <p>במהלך שנות העבודה שלי כעצמאית, בניתי כלי אבחוני משלי בתחום הפסיכודידקטי, ייחודי ושונה מהדרך המקובלת. בעזרתו כבר 13 שנים אני זוכה להגיע ללב כל ילד/נער ולעשות איתם ועם הוריהם תהליכים מדהימים ומרגשים. ביניהם בעיקר בעלי לקויות למידה, על הרצף האוטיסטי, קשיי התנהגות, ADHD ועוד.</p>
-            <p>לאורך הדרך מצאתי שוב ושוב שמוזיקה וריקוד הם כלים טיפוליים מדהימים, שעושים פלאים בכל סוגי וגילאי האנשים, ומחברים לבבות.</p>
+            <p>בעזרת הכלים השונים, כבר 13 שנים שאני מלווה אנשים בתהליכי שינוי שמתחילים מבפנים ומשתקפים החוצה.</p>
+            <p>השיטה שלי ממוקדת ומביאה לתוצאות מעשיות ומיידיות – במקום לשקוע בשנים של שיחות על העבר, אנחנו עובדים בצורה מדויקת שעוזרת לכם להבין ולקבל את עצמכם באמת, ולהבין מדוע אתם צריכים להיות בדיוק כמו שאתם.</p>
+            <p>ויש בזה המון הקלה.. במיוחד לאנשים שתמיד מחפשים מה לשפר בעצמם..</p>
+            <p>השינויים הם מהותיים ומקיפים מגוון רחב של תחומים, כמו גמילה מעישון, מציאת זוגיות או הגשמה עצמית.</p>
+            <p>המעניין הוא שלרוב מגיעים עם רצון ספציפי אחד, ותוך כדי העבודה מגלים שהשינוי חיובי ורחב הרבה יותר ממה שדמיינתם במקור, כך שההתקדמות החיצונית תמיד מלווה גם בשקט ורווחה פנימית.</p>
         </div>
     </div>
 
     <img src="clinic.jpeg" class="content-img" alt="הקליניקה">
+
+    <!-- WAVE DIVIDER -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 800 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,16 C100,0 200,32 400,16 C600,0 700,32 800,16 L800,32 L0,32Z" fill="#e8d5b7" opacity="0.5"/>
+        </svg>
+    </div>
 
     <!-- METHODS -->
     <div id="methods">
@@ -490,46 +503,53 @@
             <span class="section-label">הגישה שלי</span>
             <h2>על השיטות</h2>
         </div>
-        <div class="section-body">
+        <div class="section-content">
 
             <div class="method-block">
                 <span class="method-tag">NLP</span>
-                <h3>מאסטר ב־NLP</h3>
+                <h3>מאסטר ב־NLP 🌿</h3>
                 <p>בשיטה הזו אנחנו חוזרים לרגעי שורש – נקודות בהן נוצר דפוס או אמונה שמעכבים אותך עד היום – ומבינים מה הפעיל אותם. בעזרת תרגילים מנטליים מדויקים כמו תרגילי ציר זמן, אנחנו משנים את הפרשנות שהתת־מודע מחזיק ומסייעים לבנות דפוסים חדשים, מקדמים ומדויקים לך. זהו תהליך תכלסי, עמוק ומעורר שינוי. חשוב לדעת: השיטה אינה קסם – היא דורשת רצון אמיתי לעבור תהליך פנימי.</p>
             </div>
 
+            <video controls playsinline preload="metadata">
+                <source src="clinic.mp4" type="video/mp4">
+            </video>
+
             <div class="method-block">
                 <span class="method-tag">סאטיה</span>
-                <h3>שיטת סאטיה</h3>
+                <h3>שיטת סאטיה 🌿</h3>
                 <p>שיטה טיפולית שמבוססת על שיח עמוק ונוכחות בגוף. הרעיון המרכזי הוא לא למהר לפתור, אלא להסכים לפגוש את מה שכואב באמת – שם מתחיל הריפוי. בטיפול נבחן דפוסים שנוצרו בילדות, ונראה איך הם משפיעים על חייך היום. נוצר חיבור מדויק בין מה שקורה בפנים לבין מה שקורה בחוץ.</p>
             </div>
 
             <div class="method-block">
                 <span class="method-tag">Human Design</span>
-                <h3>Human Design – הכנת מפה וקריאה אישית</h3>
+                <h3>Human Design – הכנת מפה וקריאה אישית 🌿</h3>
                 <p>מפה אישית שמבוססת על פרטי הלידה שלך, ונותנת הבנה מעשית ומפתיעה לגבי איך אתה בנוי. הדרך לקבל החלטות, מערכות יחסים, אנרגיה, ייעוד, ועוד. אנשים מדווחים שפתאום הכל "עושה סדר" – דברים שהרגשת על עצמך, מקבלים אישור, ומתחזקת תחושת קבלה עצמית. השיטה אינה מיסטית – אני משתמשת בה ככלי אבחוני, וכל מה שאני עושה קיבל אישור הלכתי מרב.</p>
             </div>
 
+            <img src="humandesign.jpeg" class="content-img small" alt="Human Design" style="margin: 20px auto;">
+
             <div class="method-block">
                 <span class="method-tag">טארוט</span>
-                <h3>קלפי טארוט – קלפי אושו</h3>
+                <h3>קלפי טארוט – קלפי אושו 🌿</h3>
                 <p>הטארוט כאן לא עוסק בעתיד, אלא בהבנה של מה עוצר אותך כרגע, מה באמת קורה מתחת לפני השטח, ואיך להשתחרר ממנו. הקלפים משקפים את הסיפור הפנימי שלך ברגע הזה, ומכוונים אותך לדיוק, בהירות וצמיחה. הקלפים אינם מיסטיים, אלא כלי התבוננות שמכוון לעבודה פנימית. גם כאן, הכל נעשה באישור הלכתי.</p>
             </div>
+
+            <video controls playsinline preload="metadata">
+                <source src="tarot.mp4" type="video/mp4">
+            </video>
 
         </div>
     </div>
 
-    <video controls playsinline preload="metadata">
-        <source src="clinic.mp4" type="video/mp4">
-    </video>
-
     <a href="https://wa.me/972506366588" class="whatsapp-btn">לשאלות נוספות בוואטסאפ</a>
 
-    <img src="humandesign.jpeg" class="content-img small" alt="Human Design">
-
-    <video controls playsinline preload="metadata">
-        <source src="tarot.mp4" type="video/mp4">
-    </video>
+    <!-- WAVE DIVIDER -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 800 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,16 C100,32 200,0 400,16 C600,32 700,0 800,16 L800,32 L0,32Z" fill="#d4ece0" opacity="0.5"/>
+        </svg>
+    </div>
 
     <!-- OFFER -->
     <div id="offer">
@@ -537,7 +557,7 @@
             <span class="section-label">מה מחכה לך</span>
             <h2>מה אני מציעה?</h2>
         </div>
-        <div class="section-body">
+        <div class="section-content">
             <div class="offer-card">
                 <span class="offer-number">1</span>
                 <div class="offer-title">בין 2–4 מפגשי אבחון אישיותי, יעוץ והכוונה</div>
@@ -554,13 +574,20 @@
         </div>
     </div>
 
+    <!-- WAVE DIVIDER -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 800 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,16 C100,0 200,32 400,16 C600,0 700,32 800,16 L800,32 L0,32Z" fill="#e8d5b7" opacity="0.5"/>
+        </svg>
+    </div>
+
     <!-- TESTIMONIALS -->
     <div id="testimonials">
         <div class="section-header header-testimonials">
             <span class="section-label">קולות מהשטח</span>
             <h2>מה אומרים המטופלים?</h2>
         </div>
-        <div class="section-body">
+        <div class="section-content">
             <div class="reviews-grid">
                 <div class="review-card"><img src="hamlaza8.jpeg" alt="המלצה"></div>
                 <div class="review-card"><img src="hamlaza3.jpeg" alt="המלצה"></div>
@@ -575,7 +602,9 @@
         </div>
     </div>
 
-    <div class="divider">✦ ✦ ✦</div>
+    <div class="ending-decoration">
+        <span>✦ ✦ ✦</span>
+    </div>
 
     <a href="https://wa.me/972506366588" class="whatsapp-btn">דברו איתי – בואו נתחיל</a>
 
